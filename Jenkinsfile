@@ -5,13 +5,23 @@ pipeline {
         jdk 'jdk8' 
     }
     stages {
-  stage('SCM Checkout'){
+         steps {
+        stage('SCM Checkout'){
     git 'https://github.com/Nawordth/devops'
+        }
   }
-  stage('Build') {
-   withMaven(maven: 'Maven 3') {
-     sh 'mvn clean package'
-   }
-  }
-}
+        stage ('Initialize') {
+            steps {
+                    echo "PATH = ${PATH}"
+                    echo "M2_HOME = ${M2_HOME}"
+
+            }
+        }
+
+        stage ('Build') {
+            steps {
+                echo 'This is a minimal pipeline.'
+            }
+        }
+    }
 }
