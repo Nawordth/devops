@@ -68,7 +68,7 @@ public class PageHitCounter extends HttpServlet {
                 "<html>\n" +
                    "<head><title>" + title + "</title></head>\n" +
                    "<body bgcolor = \"#f0f0f0\">\n" +
-                      "<h1 align = \"center\">" + "DevOps Challenge 2019 October - Team 1" + "</h1>\n" +
+                      "<h1 align = \"center\">" + "DevOps Challenge 2019 October - Team 01" + "</h1>\n" +
                      /* "<h2 align = \"center\">" + hitCount + "</h2>\n" +
                       "<h1 align = \"center\">" + title2 + "</h1>\n" +
                       "<h2 align = \"center\">" + hostaddress + "</h2>\n" +
