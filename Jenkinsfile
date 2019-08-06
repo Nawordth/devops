@@ -1,22 +1,9 @@
-pipeline {
-    agent any
-    tools { 
-        maven 'Maven 3.3.9' 
-        jdk 'jdk8' 
-    }
-    stages {
-        stage ('Initialize') {
-            steps {
-                    echo "PATH = ${PATH}"
-                    echo "M2_HOME = ${M2_HOME}"
-
-            }
-        }
-
-        stage ('Build') {
-            steps {
-                echo 'This is a minimal pipeline.'
-            }
-        }
-    }
+node{
+  stage('SCM Checkout'){
+    git 'https://github.com/Nawordth/devops'
+  }
+  stage('Compile-Package'){
+    def mvnHome = tool name: 'Apache Maven 3.6.0', type: 'maven'
+    sh "${mvnHome}/bin/mvn -B -DskipTests clean package"
+  }
 }
