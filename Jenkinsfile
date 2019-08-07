@@ -11,7 +11,10 @@ node{
         env.PATH = "${dockerHome}/bin:${env.PATH}"
     }
     stage('Build') {
-sh 'docker build -t shanem/spring-petclinic:latest .'
+echo "Build docker image"
+                script {
+                    dockerImage = docker.build(2,  '-f ./Dockerfile .')
+                    pipelineContext.dockerImage = dockerImage
             
    }
 }
