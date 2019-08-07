@@ -7,12 +7,12 @@ node{
     sh "${mvnHome}/bin/mvn -B -DskipTests clean package"
   }
     stage('Build') {
-            steps {
+         
                 echo "Build docker image"
                 script {
                     dockerImage = docker.build(1,  '-f ./Dockerfile .')
                     pipelineContext.dockerImage = dockerImage
                 }
-            }
+            
    }
 }
