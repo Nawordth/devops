@@ -9,7 +9,9 @@ node{
    stage('Initialize'){
         def dockerHome = tool 'mDocker'
         env.PATH = "${dockerHome}/bin:${env.PATH}"
-        sh "${dockerHome}/bin/docker build -t shanem/spring-petclinic:latest ."
+            }
+      stage('Image Build'){
+        imageBuild('aaa', 3)
     }
     
 }
