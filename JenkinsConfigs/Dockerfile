@@ -16,6 +16,5 @@ RUN install-plugins.sh \
   pipeline-utility-steps \
   generic-webhook-trigger \
   git-changelog \
-  docker-slaves \
   violation-comments-to-gitlab
   
