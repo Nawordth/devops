@@ -10,6 +10,7 @@ echo --------------------------------------------------------
 
 docker run \
  --name jenkins-sandbox \
+ -v /var/run/docker.sock:/var/run/docker.sock \
  -p 8080:8080 \
  -e personal_access_token=$personal_access_token \
  docker-jenkins-sandbox
