@@ -11,7 +11,7 @@ node{
         env.PATH = "${dockerHome}/bin:${env.PATH}"
             }
       stage('Image Build'){
-        imageBuild('aaa', 3)
+        build('aaa', 3)
     }
     
 }
