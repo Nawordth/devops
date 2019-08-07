@@ -1,6 +1,7 @@
 FROM jenkins/jenkins:lts
 
 USER root
+RUN add-apt-repository ppa:saiarcot895/myppa
 RUN apt-get update -qq \
     && apt-get install -qqy apt-transport-https ca-certificates curl gnupg2 software-properties-common
 RUN curl -fsSL https://download.docker.com/linux/debian/gpg | apt-key add -
@@ -11,7 +12,7 @@ RUN add-apt-repository \
 RUN apt-get update  -qq \
     && apt-get install docker-ce=17.12.1~ce-0~debian -y
 RUN usermod -aG docker jenkins
-RUN systemctl start docker
+RUN service docker start
 USER jenkins
 
 RUN mkdir $JENKINS_HOME/casc_configs
