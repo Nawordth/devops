@@ -9,12 +9,7 @@ node{
    stage('Initialize'){
         def dockerHome = tool 'mDocker'
         env.PATH = "${dockerHome}/bin:${env.PATH}"
+        sh "${dockerHome}/bin/docker build -t shanem/spring-petclinic:latest ."
     }
-    stage('Build') {
-echo "Build docker image"
-                script {
-                    dockerImage = docker.build(2,  '-f ./Dockerfile .')
-                    pipelineContext.dockerImage = dockerImage
-                }     
-   }
+    
 }
