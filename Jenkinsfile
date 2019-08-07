@@ -7,7 +7,7 @@ node{
     sh "${mvnHome}/bin/mvn -B -DskipTests clean package"
   }
    stage('Initialize'){
-        def dockerHome = tool 'myDocker'
+        def dockerHome = tool 'mDocker'
         env.PATH = "${dockerHome}/bin:${env.PATH}"
     }
     stage('Build') {
