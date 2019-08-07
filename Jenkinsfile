@@ -11,7 +11,7 @@ node{
         env.PATH = "${dockerHome}/bin:${env.PATH}"
             }
       stage('Image Build'){
-        build('aaa', 3)
+        docker.build registry:2
     }
     
 }
