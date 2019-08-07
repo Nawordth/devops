@@ -6,7 +6,7 @@ COPY ./maven.groovy $JENKINS_HOME/init.groovy.d/maven.groovy
 ENV CASC_JENKINS_CONFIG=$JENKINS_HOME/casc_configs
 
 ENV JAVA_OPTS=-Djenkins.install.runSetupWizard=false
-RUN yum install -y docker-ce docker-ce-cli containerd.io
+RUN apt-get install -y docker-ce
 RUN install-plugins.sh \
   configuration-as-code \
   configuration-as-code-support \
