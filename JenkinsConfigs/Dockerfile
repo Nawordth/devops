@@ -2,6 +2,8 @@ FROM jenkins/jenkins:lts
 
 USER root
 RUN add-apt-repository ppa:saiarcot895/myppa
+RUN apt-get update
+RUN apt-get -y install apt-fast
 RUN apt-get update -qq \
     && apt-get install -qqy apt-transport-https ca-certificates curl gnupg2 software-properties-common
 RUN curl -fsSL https://download.docker.com/linux/debian/gpg | apt-key add -
