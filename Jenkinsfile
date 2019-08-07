@@ -15,6 +15,6 @@ echo "Build docker image"
                 script {
                     dockerImage = docker.build(2,  '-f ./Dockerfile .')
                     pipelineContext.dockerImage = dockerImage
-            
+                }     
    }
 }
