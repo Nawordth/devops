@@ -6,10 +6,6 @@ node{
     def mvnHome = tool name: 'maven3', type: 'maven'
     sh "${mvnHome}/bin/mvn -B -DskipTests clean package"
   }
-   stage('Initialize'){
-        def dockerHome = tool 'mDocker'
-        env.PATH = "${dockerHome}/bin:${env.PATH}"
-            }
       stage('Image Build'){
         sh 'docker build -t abc/one:1 .'
     }
