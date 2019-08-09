@@ -14,6 +14,6 @@ node{
       sh 'docker push hasarangaprasad/test:2'
           }
   stage("Deploy") {
-                    sh "ansible-playbook playbook1.yml -i localhost"
+                    sh "ansible-playbook playbook1.yml -i hosts"
   }
 }
