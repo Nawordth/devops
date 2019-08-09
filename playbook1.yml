@@ -8,4 +8,4 @@
     - name: Running the container
       docker_container:
         image: hasarangaprasad/test:2
-        state: running
+        name: agent
