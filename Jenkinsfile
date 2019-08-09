@@ -13,4 +13,7 @@ node{
   sh 'docker login -u hasarangaprasad -p hasa@12345'
       sh 'docker push hasarangaprasad/test:2'
           }
+  dir("Deploy") {
+                    sh "ansible-playbook playbook1 -i localhost"
+  }
 }
