@@ -4,10 +4,13 @@ node{
   }
   stage('Compile-Package'){
     def mvnHome = tool name: 'maven3', type: 'maven'
-    sh "${mvnHome}/bin/mvn -B -DskipTests clean package"
+    sh "${mvnHome}/bin/mvn -B -DskipTests clean install"
   }
       stage('Image Build'){
-        sh 'docker build -t abc/one:1 .'
+        sh 'docker build -t hasarangaprasad/test:1 .'
     }
-    
+    stage('Image Push'){
+  sh 'docker login -u hasarangaprasad -p hasa@12345'
+      sh 'docker push hasarangaprasad/test:1'
+          }
 }
