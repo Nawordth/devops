@@ -7,10 +7,10 @@ node{
     sh "${mvnHome}/bin/mvn -B -DskipTests clean install"
   }
       stage('Image Build'){
-        sh 'docker build -t hasarangaprasad/test:1 .'
+        sh 'docker build -t hasarangaprasad/test:2 .'
     }
     stage('Image Push'){
   sh 'docker login -u hasarangaprasad -p hasa@12345'
-      sh 'docker push hasarangaprasad/test:1'
+      sh 'docker push hasarangaprasad/test:2'
           }
 }
