@@ -1,3 +1,11 @@
+def envs = loadEnvs();
+
+properties([
+   parameters([
+      choice(choices: envs, description: 'Please select an environment', name: 'Env')
+   ])
+])
+
 node{
   stage('SCM Checkout'){
     git 'https://github.com/Nawordth/devops'
