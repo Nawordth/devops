@@ -7,13 +7,13 @@
   tasks:
   - name: Rm container
     docker_container:
-    name: agent
-    state: absent
+      name: agent
+      state: absent
       
   - name: Running the container
     docker_container:
-    image: hasarangaprasad/test:2
-    name: agent
-    ports: 8080:8080
+      image: hasarangaprasad/test:2
+      name: agent
+      ports: 8080:8080
 
 
