@@ -19,7 +19,7 @@ node{
          def response = sh(script: 'curl -s -o /dev/null -w "%{http_code}" http://10.0.2.4:9999/PageHitCounter2/PageHitCounter2', returnStdout: true)
          echo response
          if (response != '200') {
-            return 1
+            return
         } 
          sh 'docker rm -f agent'
        }
