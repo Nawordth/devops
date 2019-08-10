@@ -1,3 +1,9 @@
+properties([
+  parameters([
+    string(name: 'DEPLOY_ENV', defaultValue: 'TESTING', description: 'The target environment', )
+   ])
+])
+
 node{
   stage('SCM Checkout'){
     git 'https://github.com/Nawordth/devops'
