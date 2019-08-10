@@ -27,6 +27,7 @@ node{
     stage('Image Push'){
   sh 'docker login -u hasarangaprasad -p hasa@12345'
       sh 'docker push hasarangaprasad/test:2'
+      sh 'docker image rm hasarangaprasad/test:2'
           }
   stage("Deploy") {
                     sh "ansible-playbook playbook1.yml -i hosts"
