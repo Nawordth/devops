@@ -10,7 +10,9 @@ node{
         sh 'docker build -t hasarangaprasad/test:2 .'
     }
        stage('Image Test'){ 
+         catchError {
          sh 'docker rm -f agent'
+         }
       sh 'docker run --name agent -d -p 9999:8080 hasarangaprasad/test:2'
          def response = sh(script: 'curl http://127.0.0.1:9999/PageHitCounter2/PageHitCounter2', returnStdout: true)
          echo response
