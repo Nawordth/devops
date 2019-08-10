@@ -11,7 +11,7 @@ node{
     }
        stage('Image Test'){ 
       sh 'docker run --name agent -d -p 9999:8080 hasarangaprasad/test:2'
-         def response = sh(script: 'curl http://localhost:9999', returnStdout: true)
+         def response = sh(script: 'curl http://127.0.0.1:9999/PageHitCounter2/PageHitCounter2', returnStdout: true)
          echo response
        }
     stage('Image Push'){
