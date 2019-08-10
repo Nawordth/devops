@@ -9,6 +9,11 @@ node{
       stage('Image Build'){
         sh 'docker build -t hasarangaprasad/test:2 .'
     }
+       stage('Image Test'){ 
+      sh 'docker run --name agent -d -p 9999:8080 hasarangaprasad/test:2'
+         def response = sh(script: 'curl http://localhost:9999', returnStdout: true)
+         echo response
+       }
     stage('Image Push'){
   sh 'docker login -u hasarangaprasad -p hasa@12345'
       sh 'docker push hasarangaprasad/test:2'
