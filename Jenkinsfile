@@ -22,7 +22,7 @@ node{
     currentBuild.result = 'ABORTED'
     error('Health check is failed during the image test..')
         } 
-         sh 'docker rm -f agent'
+         sh 'docker rm -v -f agent'
        }
     stage('Image Push'){
   sh 'docker login -u hasarangaprasad -p hasa@12345'
