@@ -15,8 +15,9 @@ node{
          }
       sh 'docker run --name agent -d -p 9999:8080 hasarangaprasad/test:2'
          sleep(time:5,unit:"SECONDS")
-         def response = sh(script: 'curl http://10.0.2.4:9999/PageHitCounter2/PageHitCounter', returnStdout: true)
+         def response = sh(script: 'curl http://10.0.2.4:9999/PageHitCounter2/PageHitCounter2', returnStdout: true)
          echo response
+         sh 'docker rm -f agent'
        }
     stage('Image Push'){
   sh 'docker login -u hasarangaprasad -p hasa@12345'
