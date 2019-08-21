@@ -1,2 +1,2 @@
 [node]
-34.219.185.19 ansible_ssh_private_key_file=/var/jenkins_home/.ssh/devops.pem
+54.70.138.242 ansible_ssh_private_key_file=/var/jenkins_home/.ssh/devops.pem
