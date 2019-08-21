@@ -14,6 +14,6 @@
     docker_container:
       image: hasarangaprasad/test:2
       name: agent
-      ports: 8080:8080
+      ports: 80:8080
 
 
