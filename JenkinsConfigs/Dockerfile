@@ -4,7 +4,6 @@ RUN mkdir $JENKINS_HOME/casc_configs
 COPY ./jenkins.yaml $JENKINS_HOME/casc_configs/jenkins.yaml
 COPY ./maven.groovy $JENKINS_HOME/init.groovy.d/maven.groovy
 COPY ./devops.pem $JENKINS_HOME/.ssh/devops.pem
-RUN chmod 600 $JENKINS_HOME/.ssh/devops.pem
 ENV CASC_JENKINS_CONFIG=$JENKINS_HOME/casc_configs
 
 ENV JAVA_OPTS=-Djenkins.install.runSetupWizard=false
@@ -21,6 +20,7 @@ RUN install-plugins.sh \
   violation-comments-to-gitlab
   
 USER root
+RUN chmod 600 $JENKINS_HOME/.ssh/devops.pem
 RUN apt-get update && \
 apt-get -y install apt-transport-https \
     ca-certificates \
