@@ -36,8 +36,7 @@ apt-get -y install docker-ce
 RUN apt-get install -y docker-ce
 RUN apt-get install -y ansible
 RUN usermod -a -G docker jenkins
-RUN chown jenkins.jenkins $JENKINS_HOME/.ssh/ -R
-RUN chown jenkins.jenkins $JENKINS_HOME/.ssh/devops.pem
-RUN chmod 600 $JENKINS_HOME/.ssh/devops.pem
+RUN chown jenkins.jenkins /var/jenkins_home/.ssh/ -R
+RUN chmod 600 /var/jenkins_home/.ssh/devops.pem
 USER jenkins
   
