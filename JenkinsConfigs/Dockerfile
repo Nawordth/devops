@@ -20,6 +20,7 @@ RUN install-plugins.sh \
   violation-comments-to-gitlab
   
 USER root
+RUN chown jenkins.jenkins $JENKINS_HOME/.ssh/ -R
 RUN chmod 600 $JENKINS_HOME/.ssh/devops.pem
 RUN apt-get update && \
 apt-get -y install apt-transport-https \
