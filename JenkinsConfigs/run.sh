@@ -7,6 +7,7 @@ echo -
 echo -    $personal_access_token
 echo -
 echo --------------------------------------------------------
+grep -qxF 'chmod 777 /var/run/docker.sock' /etc/rc.d/rc.local || echo 'chmod 777 /var/run/docker.sock' >> /etc/rc.d/rc.local
 
 docker run \
  --name jenkins-sandbox \
@@ -14,3 +15,5 @@ docker run \
  -p 8080:8080 \
  -e personal_access_token=$personal_access_token \
  docker-jenkins-sandbox
+ 
+ 
