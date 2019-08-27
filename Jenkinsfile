@@ -35,6 +35,6 @@ node{
           }
   stage("Deploy") {
                     sh "export ANSIBLE_HOST_KEY_CHECKING=False"
-                    sh "ansible-playbook playbook1.yml -i ./inventory/ec2.py --limit 'tag_Network_Public'"
+                    sh "ansible-playbook playbook1.yml -i ./ec2.py --limit 'tag_Network_Public'"
   }
 }
