@@ -16,9 +16,6 @@ node{
         sh 'docker build -t hasarangaprasad/test:2 .'
     }
        stage('Image Test'){ 
-         catchError {
-         sh 'docker rm -f agent'
-         }
       sh 'docker run --name agent -d -p 9999:8080 hasarangaprasad/test:2'
          sleep(time:5,unit:"SECONDS")
          
