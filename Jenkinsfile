@@ -16,9 +16,7 @@ node{
         sh 'docker build -t hasarangaprasad/test:2 .'
     }
        stage('Image Test'){ 
-         set +e
-         sh 'docker rm -v -f agent'
-         set -e
+         sh 'docker rm -v -f agent' || true
       sh 'docker run --name agent -d -p 9999:8080 hasarangaprasad/test:2'
          sleep(time:5,unit:"SECONDS")
          
