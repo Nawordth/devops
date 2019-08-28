@@ -14,7 +14,7 @@ docker run \
  --add-host=dockerhost:$dockerhost \
  --name jenkins-sandbox \
  -v /var/run/docker.sock:/var/run/docker.sock \
- -v jenkins.yaml /var/jenkins_home/casc_configs/jenkins.yaml
+ -v jenkins.yaml /var/jenkins_home/casc_configs/jenkins.yaml \
  -p 8080:8080 \
  -e personal_access_token=$personal_access_token \
  docker-jenkins-sandbox
