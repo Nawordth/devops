@@ -1,7 +1,7 @@
 properties([
   parameters([
-    string(name: 'DEPLOY_ENV', defaultValue: 'TESTING', description: 'The target environment', ),
-    string(name: 'DEPLOY_ENV1', defaultValue: 'TESTING1', description: 'The target environment1', )
+    string(name: 'aws_access_key_id', defaultValue: 'AKIAXPZAZOBCTVKKFM6A', description: 'The target environment', ),
+    string(name: 'aws_secret_access_key', defaultValue: '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', description: 'The target environment1', )
    ])
 ])
 
