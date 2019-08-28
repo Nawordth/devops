@@ -57,7 +57,7 @@ unclassified:
 
 jobs:
   - script: >
-      pipelineJob('Create Jobs Pipeline') {
+      pipelineJob('Pipeline') {
         logRotator {
           numToKeep(10)
         }
