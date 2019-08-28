@@ -61,10 +61,10 @@ jobs:
         logRotator {
           numToKeep(10)
         }
-          parameters([ 
-    string(name: 'AWS_ACCESS_KEY_ID', defaultValue: 'AKIAXPZAZOBCTVKKFM6A', description: 'The target environment', ),
-    string(name: 'AWS_SECRET_ACCESS_KEY', defaultValue: '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', description: 'The target environment1', )
-   ])
+        parameters {
+    stringParam("AWS_ACCESS_KEY_ID", "AKIAXPZAZOBCTVKKFM6A" , "1")   
+    stringParam("AWS_SECRET_ACCESS_KEY", "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" , "2")  
+        }
       definition {
         cpsScm {
             scm {
