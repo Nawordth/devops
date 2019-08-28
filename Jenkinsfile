@@ -1,7 +1,7 @@
 properties([
   parameters([
-    string(name: 'aws_access_key_id', defaultValue: 'AKIAXPZAZOBCTVKKFM6A', description: 'The target environment', ),
-    string(name: 'aws_secret_access_key', defaultValue: '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', description: 'The target environment1', )
+    string(name: 'AWS_ACCESS_KEY_ID', defaultValue: 'AKIAXPZAZOBCTVKKFM6A', description: 'The target environment', ),
+    string(name: 'AWS_SECRET_ACCESS_KEY', defaultValue: '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', description: 'The target environment1', )
    ])
 ])
 
@@ -37,6 +37,6 @@ node{
   stage("Deploy") {
                     sh "export ANSIBLE_HOST_KEY_CHECKING=False"
                     sh "chmod +x ./ec2.py"
-                    sh "ansible-playbook playbook1.yml -i ./ec2.py --limit 'tag_Network_Public' --extra-vars 'AWS_ACCESS_KEY_ID=$aws_access_key_id AWS_SECRET_ACCESS_KEY=$aws_secret_access_key'"
+                    sh "ansible-playbook playbook1.yml -i ./ec2.py --limit 'tag_Network_Public'"
   }
 }
