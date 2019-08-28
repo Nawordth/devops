@@ -1,6 +1,7 @@
 properties([
   parameters([
     string(name: 'DEPLOY_ENV', defaultValue: 'TESTING', description: 'The target environment', )
+    string(name: 'DEPLOY_ENV1', defaultValue: 'TESTING1', description: 'The target environment1', )
    ])
 ])
 
