@@ -31,7 +31,6 @@ add-apt-repository \
     "deb [arch=amd64] https://download.docker.com/linux/$(. /etc/os-release; echo "$ID") \
     $(lsb_release -cs) \
     stable" && \
-apt-get update && \
 apt-get -y install docker-ce
 RUN apt-get install -y docker-ce
 RUN apt-get install -y python-boto
