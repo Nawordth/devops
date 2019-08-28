@@ -1,10 +1,3 @@
-properties([
-  parameters([
-    string(name: 'AWS_ACCESS_KEY_ID', defaultValue: 'AKIAXPZAZOBCTVKKFM6A', description: 'The target environment', ),
-    string(name: 'AWS_SECRET_ACCESS_KEY', defaultValue: '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', description: 'The target environment1', )
-   ])
-])
-
 node{
   stage('SCM Checkout'){
     git 'https://github.com/Nawordth/devops'
