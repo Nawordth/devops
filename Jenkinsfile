@@ -37,6 +37,6 @@ node{
   stage("Deploy") {
                     sh "export ANSIBLE_HOST_KEY_CHECKING=False"
                     sh "chmod +x ./ec2.py"
-                    sh "ansible-playbook playbook1.yml -i ./ec2.py --limit 'tag_Network_Public' --extra-vars 'aws_access_key_id=$aws_access_key_id aws_secret_access_key=$aws_secret_access_key'"
+                    sh "ansible-playbook playbook1.yml -i ./ec2.py --limit 'tag_Network_Public' --extra-vars 'AWS_ACCESS_KEY_ID=$aws_access_key_id AWS_SECRET_ACCESS_KEY=$aws_secret_access_key'"
   }
 }
