@@ -20,7 +20,7 @@ node{
       sh 'docker run --name agent -d -p 9999:8080 hasarangaprasad/test:2'
          sleep(time:5,unit:"SECONDS")
          
-         def response = sh(script: 'curl -s -o /dev/null -w "%{http_code}" http://localhost:9999/PageHitCounter2/PageHitCounter', returnStdout: true)
+         def response = sh(script: 'curl -s -o /dev/null -w "%{http_code}" http://dockerhost:9999/PageHitCounter2/PageHitCounter', returnStdout: true)
          echo response
          if (response != '200') {
     currentBuild.result = 'ABORTED'
