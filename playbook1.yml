@@ -16,6 +16,6 @@
       image: hasarangaprasad/test:latest
       name: agent
       ports: 80:8080
-      hostname: "{{ansible_hotname}}"
+      hostname: "{{ansible_hostname}}"
 
 
