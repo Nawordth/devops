@@ -518,7 +518,6 @@
           "#!/bin/bash -xe\n",
 		  "yum update -y aws-cfn-bootstrap\n",
           "sudo pip install docker-py\n",
-	  "sudo docker run --name agent -d -p 80:8080 hasarangaprasad/test:latest\n",
           "# Install the sample application\n",
           "/opt/aws/bin/cfn-init -v ",
           "    --stack ", { "Ref" : "AWS::StackId" },
@@ -529,7 +528,8 @@
           "/opt/aws/bin/cfn-signal -e $? ",
           "    --stack ", { "Ref" : "AWS::StackId" },
           "    --resource WebServerFleet ",
-          "    --region ", { "Ref" : "AWS::Region" }, "\n"
+          "    --region ", { "Ref" : "AWS::Region" }, "\n",
+		  "sudo docker run --name agent -d -p 80:8080 hasarangaprasad/test:latest\n"
         ]]}}
       }
     },
