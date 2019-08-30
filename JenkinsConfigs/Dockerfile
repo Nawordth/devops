@@ -44,5 +44,6 @@ RUN python get-pip.py --user
 RUN ln -s /root/.local/bin/pip /usr/local/bin/pip
 RUN pip install --upgrade --user awscli
 RUN grep -qxF 'jenkins ALL=(ALL) NOPASSWD: ALL' /etc/sudoers || echo 'jenkins ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers
+RUN ln -s /root/.local/bin/aws /usr/local/bin/aws
 USER jenkins
   
