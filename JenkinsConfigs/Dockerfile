@@ -39,5 +39,10 @@ RUN apt-get install -y ansible
 RUN usermod -a -G docker jenkins
 RUN chown jenkins.jenkins /var/jenkins_home/.ssh/ -R
 RUN chmod 600 /var/jenkins_home/.ssh/devops.pem
+RUN curl -O https://bootstrap.pypa.io/get-pip.py
+RUN python get-pip.py --user
+RUN export PATH=~/.local/bin:$PATH
+RUN source ~/.bashrc
+RUN pip install awscli --upgrade --user
 USER jenkins
   
