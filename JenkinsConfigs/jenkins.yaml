@@ -87,6 +87,7 @@ jobs:
         parameters {
            stringParam('AWS_ACCESS_KEY_ID', 'AKIAXPZAZOBCTVKKFM6A', 'AWS_ACCESS_KEY_ID')
            stringParam('AWS_SECRET_ACCESS_KEY', '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', 'AWS_SECRET_ACCESS_KEY')
+           stringParam('AWS_REGION', 'us-west-2', 'AWS_REGION')
         }
       definition {
         cpsScm {
