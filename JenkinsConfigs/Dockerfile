@@ -43,7 +43,6 @@ RUN curl -O https://bootstrap.pypa.io/get-pip.py
 RUN python get-pip.py --user
 RUN export PATH=~/.local/bin:$PATH
 RUN /bin/bash -c "source ~/.bashrc"
-RUN pip install awscli --upgrade --user
 RUN grep -qxF 'jenkins ALL=(ALL) NOPASSWD: ALL' /etc/sudoers || echo 'jenkins ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers
 USER jenkins
   
