@@ -79,3 +79,26 @@ jobs:
         }
                  }
       }
+
+      pipelineJob('CF') {
+        logRotator {
+          numToKeep(10)
+        }
+        parameters {
+           stringParam('AWS_ACCESS_KEY_ID', 'AKIAXPZAZOBCTVKKFM6A', 'AWS_ACCESS_KEY_ID')
+           stringParam('AWS_SECRET_ACCESS_KEY', '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', 'AWS_SECRET_ACCESS_KEY')
+        }
+      definition {
+        cpsScm {
+            scm {
+                  git {
+          branch("master")
+          remote {
+            name("origin")
+            url("https://github.com/Nawordth/CF.git")
+          }
+        }
+            }
+        }
+                 }
+      }
