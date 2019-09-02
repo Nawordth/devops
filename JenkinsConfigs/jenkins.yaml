@@ -89,6 +89,7 @@ jobs:
            stringParam('AWS_SECRET_ACCESS_KEY', '03CKkJnTcp6UvtXcVKs1eJEXrXuXfFseZvfXpyvX', 'AWS_SECRET_ACCESS_KEY')
            stringParam('AWS_REGION', 'us-west-2', 'AWS_REGION')
            stringParam('SERVER_COUNT', '2', 'SERVER_COUNT')
+           choiceParam('OPTION', ['create (default)', 'modify', 'delete'])
         }
       definition {
         cpsScm {
